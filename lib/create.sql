@@ -13,9 +13,11 @@ CREATE TABLE users (
   age INTEGER
 );
 
-CREATE TABLE pledge (
+CREATE TABLE pledges (
   id INTEGER PRIMARY KEY,
   amount FLOAT,
   user_id INTEGER,
-  project_id INTEGER
+  project_id INTEGER,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+      FOREIGN KEY (project_id) REFERENCES projects(id)
 );
